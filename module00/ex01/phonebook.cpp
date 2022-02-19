@@ -6,24 +6,21 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:16:03 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/02/16 19:20:19 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:29:21 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
-#include <iostream>
 #include <iomanip>
-#include <string>
-
 
 contact::contact(void)
 {
-	std::cout << "create contacts" << std::endl;
+	std::cout << "create contact" << std::endl;
 }
 
 contact::~contact(void)
 {
-	std::cout << "delete contacts" << std::endl;
+	std::cout << "delete contact" << std::endl;
 }
 
 phonebook::phonebook(void)
@@ -36,7 +33,7 @@ phonebook::~phonebook(void)
 	std::cout << "delete phonebook" << std::endl;
 }
 
-std::string	field_input(std::string field)
+std::string	phonebook::field_input(std::string field)
 {
 	std::string	input;
 
@@ -51,8 +48,10 @@ std::string	field_input(std::string field)
 void	phonebook::add(void)
 {
 	std::string fields[5];
-	int	index = 0;
-	while (this->contacts[index].first_name.length() && index <= 7)
+	int	index;
+
+	index = 0;
+	while (index <= 7 && this->contacts[index].getfirst_name().length())
 		index++;
 	fields[0] = field_input("first name: ");
 	fields[1] = field_input("last name: ");
@@ -61,21 +60,21 @@ void	phonebook::add(void)
 	fields[4] = field_input("darkest secret: ");
 	if (index == 8)
 		index = 7;
-	this->contacts[index].first_name = fields[0];
-	this->contacts[index].last_name = fields[1];
-	this->contacts[index].nickname = fields[2];
-	this->contacts[index].phonenumber = fields[3];
-	this->contacts[index].darkest_secret = fields[4];
+	this->contacts[index].setfirst_name(fields[0]);
+	this->contacts[index].setlast_name(fields[1]);
+	this->contacts[index].setnickname(fields[2]);
+	this->contacts[index].setphonenumber(fields[3]);
+	this->contacts[index].setdarkest_secret(fields[4]);
 }
 
-std::string phonebook::truncate(std::string str)
+std::string	phonebook::truncate(std::string str)
 {
 	str.erase(str.begin()+9, str.end());
 	str.replace(str.end(), str.end(), ".");
 	return (str);
 }
 
-std::string phonebook::display_list(std::string str)
+std::string	phonebook::display_list(std::string str)
 {
 	if (str.length() >= 11)
 		return (truncate(str));
@@ -85,14 +84,14 @@ std::string phonebook::display_list(std::string str)
 
 void	phonebook::display_contact(contact &contact)
 {
-	std::cout << "first name:	" << contact.first_name << std::endl;
-	std::cout << "last name:	" << contact.last_name << std::endl;
-	std::cout << "nickname:	" << contact.nickname << std::endl;
-	std::cout << "phone number:	" << contact.phonenumber << std::endl;
-	std::cout << "darkest secret:	" << contact.darkest_secret << std::endl;
+	std::cout << "first name:	" << contact.getfirst_name() << std::endl;
+	std::cout << "last name:	" << contact.getlast_name() << std::endl;
+	std::cout << "nickname:	" << contact.getnickname() << std::endl;
+	std::cout << "phone number:	" << contact.getphonenumber() << std::endl;
+	std::cout << "darkest secret:	" << contact.getdarkest_secret() << std::endl;
 }
 
-bool is_number(std::string str)
+bool	phonebook::is_number(std::string str)
 {
 	for (size_t i = 0; i < str.length(); i++)
 	{
@@ -104,19 +103,20 @@ bool is_number(std::string str)
 
 void	phonebook::search(void)
 {
-	int i = 0;
+	int i;
 	std::string index;
 
-	while(this->contacts[i].first_name.length() && i <= 7)
+	i = 0;
+	while(i <= 7 && this->contacts[i].getfirst_name().length())
 	{
 		std::cout << std::setw(10);
 		std::cout << i << "|";
 		std::cout << std::setw(10);
-		std::cout << display_list(this->contacts[i].first_name) << "|";
+		std::cout << display_list(this->contacts[i].getfirst_name()) << "|";
 		std::cout << std::setw(10);
-		std::cout << display_list(this->contacts[i].last_name) << "|";
+		std::cout << display_list(this->contacts[i].getlast_name()) << "|";
 		std::cout << std::setw(10);
-		std::cout << display_list(this->contacts[i].nickname) << "|" << std::endl;
+		std::cout << display_list(this->contacts[i].getnickname()) << "|" << std::endl;
 		i++;
 	}
 	if (i == 0)
@@ -136,30 +136,4 @@ void	phonebook::search(void)
 			break;
 	}
 	display_contact(this->contacts[std::stoi(index)]);
-}
-
-int	main(void)
-{
-	phonebook	phonebook;
-	std::string	command;
-
-	while (!std::cin.eof())
-	{
-		
-		std::cout << "Type 'ADD' to save a new contact" << std::endl;
-		std::cout << "Type 'SEARCH' to display a specific contact" << std::endl;
-		std::cout << "Type 'EXIT' to quit" << std::endl;
-		std::cin >> command;
-		if (std::cin.eof())
-			break;
-		if (command == "ADD")
-			phonebook.add();
-		else if (command == "SEARCH")
-			phonebook.search();
-		else if (command == "EXIT")
-			break;
-		else
-			std::cout << command << ": no such command" << std::endl;
-	}
-	return (0);
 }

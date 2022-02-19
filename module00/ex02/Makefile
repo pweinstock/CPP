@@ -1,12 +1,10 @@
-NAME	=	phonebook
+NAME	=	account
 
 CC		=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRCS 	=	main.cpp \
-			phonebook.cpp \
-			contact.cpp \
+SRCS 	=	Account.cpp \
 
 all: $(NAME)
 
