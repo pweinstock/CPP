@@ -6,16 +6,16 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:42:08 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/02/25 17:51:24 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/02/26 18:19:53 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string weapon)
+Weapon::Weapon(std::string type)
 {
-	this->name = Weapon::setType(weapon);
-	std::cout << "create weapon" << std::endl;
+	this->type = Weapon::setType(type);
+	std::cout << "create " << this->type << std::endl;
 }
 
 Weapon::~Weapon(void)
