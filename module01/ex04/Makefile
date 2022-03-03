@@ -1,11 +1,11 @@
-NAME	=	account
+NAME	=	sed
 
 CC		=	c++
 
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRCS 	=	Account.cpp \
-			tests.cpp
+SRCS 	=	main.cpp \
+			replace.cpp \
 
 all: $(NAME)
 

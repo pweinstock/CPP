@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/25 14:56:10 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/03/01 11:56:49 by pweinsto         ###   ########.fr       */
+/*   Created: 2022/03/01 12:21:12 by pweinsto          #+#    #+#             */
+/*   Updated: 2022/03/01 14:22:56 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "HumanB.hpp"
 #include "Weapon.hpp"
 #include <iostream>
 
-HumanA::HumanA(std::string name, Weapon& weapon) : name(name), weapon(weapon)
+HumanB::HumanB(std::string name) : name(name)
 {
 	std::cout << "create " << this->name << std::endl;
+	this->weapon = NULL;
 }
 
-HumanA::~HumanA(void)
+HumanB::~HumanB(void)
 {
 	std::cout << "destruct " << this->name << std::endl;
 }
 
-void	HumanA::attack(void)
+void	HumanB::setWeapon(Weapon& weapon)
 {
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+	this->weapon = &weapon;
+}
+
+void	HumanB::attack(void)
+{
+	if (this->weapon)
+		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+	else
+		std::cout << this->name << " attacks with hugs " << std::endl;
 }

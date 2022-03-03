@@ -5,8 +5,8 @@ CC		=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 SRCS 	=	main.cpp \
-			phonebook.cpp \
-			contact.cpp \
+			Phonebook.cpp \
+			Contact.cpp \
 
 all: $(NAME)
 

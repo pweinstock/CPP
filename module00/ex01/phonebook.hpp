@@ -6,31 +6,31 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 16:50:44 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/02/18 15:26:44 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/02/23 12:23:45 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include "contact.hpp"
+# include "Contact.hpp"
 # include <iostream>
 
-class phonebook
+class Phonebook
 {
 	public:
 	void		add(void);
 	void		search(void);
 	
-	phonebook();
-	~phonebook();
+	Phonebook();
+	~Phonebook();
 
 	private:
-	contact contacts[8];
+	Contact contacts[8];
 
 	std::string	display_list(std::string str);
 	std::string	truncate(std::string str);
-	void		display_contact(contact &contact);
+	void		display_contact(Contact &contact);
 	bool		is_number(std::string str);
 	std::string	field_input(std::string field);
 };

@@ -6,7 +6,7 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 12:13:04 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/02/18 15:26:40 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/02/23 12:21:19 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 
-class contact
+class Contact
 {
 	public:
 	std::string	getfirst_name();
@@ -30,8 +30,8 @@ class contact
 	void		setphonenumber(std::string str);
 	void		setdarkest_secret( std::string str);
 
-	contact();
-	~contact();
+	Contact();
+	~Contact();
 
 	private:
 	std::string first_name;

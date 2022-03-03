@@ -6,7 +6,7 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 12:51:03 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/02/26 18:32:47 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/03/01 12:18:06 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@
 class	HumanA
 {	
 	public:
-	Weapon	weapon;
-	std::string	name;
 	void	attack(void);
-	HumanA(std::string type, Weapon);
+	HumanA(std::string type, Weapon& weapon);
 	~HumanA();
+
+	private:
+	std::string	name;
+	Weapon&	weapon;
 };
 
 # endif

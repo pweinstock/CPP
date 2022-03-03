@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 12:36:10 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/03/02 12:57:56 by pweinsto         ###   ########.fr       */
+/*   Created: 2022/03/02 11:43:19 by pweinsto          #+#    #+#             */
+/*   Updated: 2022/03/02 11:58:44 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Karen.hpp"
+#include <iostream>
 
-#include <string>
-
-class Zombie
+int	main(int argc, char **argv)
 {
-	public:
-	void		announce(void);
-	void		set_name(std::string name);
-	std::string	get_name(void);
-	Zombie();
-	~Zombie();
-
-	private:
-	std::string	name;
-};
-
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
-
-# endif
+	if (argc != 2)
+	{
+		std::cerr << "Error: Invalid number of arguments" << std::endl;
+		return (1);
+	}
+	
+	Karen	karen;
+	
+	karen.complain(argv[1]);
+	return (0);
+}

@@ -6,34 +6,24 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 14:16:03 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/02/18 15:29:21 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/02/23 12:24:01 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 #include <iomanip>
 
-contact::contact(void)
-{
-	std::cout << "create contact" << std::endl;
-}
-
-contact::~contact(void)
-{
-	std::cout << "delete contact" << std::endl;
-}
-
-phonebook::phonebook(void)
+Phonebook::Phonebook(void)
 {
 	std::cout << "create phonebook" << std::endl;
 }
 
-phonebook::~phonebook(void)
+Phonebook::~Phonebook(void)
 {
 	std::cout << "delete phonebook" << std::endl;
 }
 
-std::string	phonebook::field_input(std::string field)
+std::string	Phonebook::field_input(std::string field)
 {
 	std::string	input;
 
@@ -45,7 +35,7 @@ std::string	phonebook::field_input(std::string field)
 	return (input);
 }
 
-void	phonebook::add(void)
+void	Phonebook::add(void)
 {
 	std::string fields[5];
 	int	index;
@@ -67,14 +57,14 @@ void	phonebook::add(void)
 	this->contacts[index].setdarkest_secret(fields[4]);
 }
 
-std::string	phonebook::truncate(std::string str)
+std::string	Phonebook::truncate(std::string str)
 {
 	str.erase(str.begin()+9, str.end());
 	str.replace(str.end(), str.end(), ".");
 	return (str);
 }
 
-std::string	phonebook::display_list(std::string str)
+std::string	Phonebook::display_list(std::string str)
 {
 	if (str.length() >= 11)
 		return (truncate(str));
@@ -82,7 +72,7 @@ std::string	phonebook::display_list(std::string str)
 		return (str);
 }
 
-void	phonebook::display_contact(contact &contact)
+void	Phonebook::display_contact(Contact &contact)
 {
 	std::cout << "first name:	" << contact.getfirst_name() << std::endl;
 	std::cout << "last name:	" << contact.getlast_name() << std::endl;
@@ -91,7 +81,7 @@ void	phonebook::display_contact(contact &contact)
 	std::cout << "darkest secret:	" << contact.getdarkest_secret() << std::endl;
 }
 
-bool	phonebook::is_number(std::string str)
+bool	Phonebook::is_number(std::string str)
 {
 	for (size_t i = 0; i < str.length(); i++)
 	{
@@ -101,7 +91,7 @@ bool	phonebook::is_number(std::string str)
 	return true;
 }
 
-void	phonebook::search(void)
+void	Phonebook::search(void)
 {
 	int i;
 	std::string index;

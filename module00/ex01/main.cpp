@@ -6,15 +6,15 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 12:35:07 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/02/18 15:25:19 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/02/23 12:20:38 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int	main(void)
 {
-	phonebook	phonebook;
+	Phonebook	phonebook;
 	std::string	command;
 
 	while (!std::cin.eof())

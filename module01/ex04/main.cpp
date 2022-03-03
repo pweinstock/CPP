@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/24 12:36:10 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/03/02 12:57:56 by pweinsto         ###   ########.fr       */
+/*   Created: 2022/03/01 14:55:46 by pweinsto          #+#    #+#             */
+/*   Updated: 2022/03/03 13:49:11 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include <iostream>
+#include "replace.hpp"
 
-#include <string>
-
-class Zombie
+int	main(int argc, char **argv)
 {
-	public:
-	void		announce(void);
-	void		set_name(std::string name);
-	std::string	get_name(void);
-	Zombie();
-	~Zombie();
-
-	private:
-	std::string	name;
-};
-
-Zombie*	newZombie(std::string name);
-void	randomChump(std::string name);
-
-# endif
+	if (argc != 4)
+	{
+		std::cerr << "Error: Invalid number of arguments" << std::endl;
+		return (0);
+	}
+	replace(argv);
+	return (0);
+}
