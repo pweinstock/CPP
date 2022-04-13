@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 18:15:38 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/03/15 17:20:13 by pweinsto         ###   ########.fr       */
+/*   Created: 2022/04/07 15:33:39 by pweinsto          #+#    #+#             */
+/*   Updated: 2022/04/07 16:28:43 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef C_HPP
+# define C_HPP
 
-int	main(void)
+# include "Base.hpp"
+
+class	C : public Base
 {
-	ScavTrap	clapper("clapper");
+};
 
-	clapper.attack("slapper");
-	clapper.takeDamage(5);
-	clapper.beRepaired(5);
-	clapper.guardGate();
-	return (0);
-}
+# endif

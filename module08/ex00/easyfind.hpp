@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 18:15:38 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/03/15 17:20:13 by pweinsto         ###   ########.fr       */
+/*   Created: 2022/04/13 11:57:14 by pweinsto          #+#    #+#             */
+/*   Updated: 2022/04/13 13:25:36 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
-int	main(void)
+# include <iostream>
+
+class	NotFoundException : public std::exception
 {
-	ScavTrap	clapper("clapper");
+	public:
+	const char *what() const throw()
+	{
+		return "no occurrence is found";
+	}
+};
 
-	clapper.attack("slapper");
-	clapper.takeDamage(5);
-	clapper.beRepaired(5);
-	clapper.guardGate();
-	return (0);
+template<typename T>
+typename T::iterator	easyfind(T &t, int i)
+{
+	typename T::iterator	it = find(t.begin(), t.end(), i);
+	if (it == t.end())
+		throw NotFoundException();
+	return it;
 }
+
+
+
+# endif

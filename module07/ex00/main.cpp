@@ -5,20 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 18:15:38 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/03/15 17:20:13 by pweinsto         ###   ########.fr       */
+/*   Created: 2022/04/12 12:02:40 by pweinsto          #+#    #+#             */
+/*   Updated: 2022/04/12 12:09:31 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "whatever.hpp"
+#include <iostream>
 
 int	main(void)
 {
-	ScavTrap	clapper("clapper");
+	int a = 2;
+	int b = 3;
 
-	clapper.attack("slapper");
-	clapper.takeDamage(5);
-	clapper.beRepaired(5);
-	clapper.guardGate();
-	return (0);
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
+	return 0;
 }

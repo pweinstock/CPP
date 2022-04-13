@@ -1,24 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 18:15:38 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/03/15 17:20:13 by pweinsto         ###   ########.fr       */
+/*   Created: 2022/04/12 11:58:01 by pweinsto          #+#    #+#             */
+/*   Updated: 2022/04/12 12:08:25 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
-int	main(void)
+template<typename T>
+void	swap(T &a, T &b)
 {
-	ScavTrap	clapper("clapper");
-
-	clapper.attack("slapper");
-	clapper.takeDamage(5);
-	clapper.beRepaired(5);
-	clapper.guardGate();
-	return (0);
+	T	tmp;
+	tmp = b;
+	b = a;
+	a = tmp;
 }
+
+template<typename T>
+T	min(T &a, T &b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+
+template<typename T>
+T	max(T &a, T &b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
+
+# endif

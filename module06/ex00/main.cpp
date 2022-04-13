@@ -5,20 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 18:15:38 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/03/15 17:20:13 by pweinsto         ###   ########.fr       */
+/*   Created: 2022/04/05 16:29:30 by pweinsto          #+#    #+#             */
+/*   Updated: 2022/04/08 11:27:54 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include <iostream>
+#include "Conversion.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	ScavTrap	clapper("clapper");
+	(void)argc;
+	Conversion test = Conversion(argv[1]);
 
-	clapper.attack("slapper");
-	clapper.takeDamage(5);
-	clapper.beRepaired(5);
-	clapper.guardGate();
+	std::cout << test << std::endl;
 	return (0);
 }
