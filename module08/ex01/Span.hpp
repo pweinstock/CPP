@@ -6,7 +6,7 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 14:54:36 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/04/13 18:06:25 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:44:55 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class	Span
 	~Span(void);
 
 	Span	&operator=(const Span &copy);
+	bool	operator==(const Span &copy);
 
 	void	addNumber(int i);
 	void	addNumber(std::vector<int>::iterator const &begin, std::vector<int>::iterator const &end);

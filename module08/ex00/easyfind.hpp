@@ -6,7 +6,7 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 11:57:14 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/04/13 13:25:36 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/04/21 14:55:38 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,5 @@ typename T::iterator	easyfind(T &t, int i)
 		throw NotFoundException();
 	return it;
 }
-
-
 
 # endif

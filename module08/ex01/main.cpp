@@ -6,7 +6,7 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:58:48 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/04/13 18:01:39 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:46:29 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(void)
 	Span sp = Span(5);
 	sp.addNumber(6);
 	sp.addNumber(3);
+	
 	sp.addNumber(17);
 	sp.addNumber(9);
 	sp.addNumber(11);
@@ -57,26 +58,19 @@ int	main(void)
 		vec.push_back(i);
 	}
 
-	test2.addNumber(vec.begin(), vec.end());
-
 	try
 	{
-		std::cout << test2.longestSpan() << std::endl;
+		test2.addNumber(vec.begin(), vec.end());
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
-	try
-	{
-		std::cout << test2.shortestSpan() << std::endl;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
+	if (test1 == test2)
+		std::cout << "both arrays are equal" << std::endl;
+	else
+		std::cout << "both arrays are not equal" << std::endl;
 
 	return 0;
 }

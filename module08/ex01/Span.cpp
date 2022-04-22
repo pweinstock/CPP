@@ -6,7 +6,7 @@
 /*   By: pweinsto <pweinsto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:00:17 by pweinsto          #+#    #+#             */
-/*   Updated: 2022/04/13 18:06:11 by pweinsto         ###   ########.fr       */
+/*   Updated: 2022/04/21 15:45:16 by pweinsto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ Span	&Span::operator=(const Span &copy)
 	return *this;
 }
 
+bool	Span::operator==(const Span &copy)
+{
+	return this->v == copy.v;
+}
+
 void	Span::addNumber(int i)
 {
 	if (this->v.size() >= N)
@@ -53,13 +58,10 @@ void	Span::addNumber(int i)
 
 void	Span::addNumber(std::vector<int>::iterator const &begin, std::vector<int>::iterator const &end)
 {
-	for (std::vector<int>::iterator it = begin; it != end; it++)
-	{
-		if (this->v.size() >= this->N)
-			throw FullSpanException();
-		else
-			this->v.push_back(*it);
-	}
+	if (end - begin > this->N)
+		throw FullSpanException();
+	else
+		this->v.assign(begin, end);
 }
 
 unsigned int	Span::shortestSpan(void)
