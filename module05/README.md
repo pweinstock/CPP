@@ -1,6 +1,6 @@
 # module05
 ## Description
-This module is designed to help you understand Try/Catch and Exceptions in CPP.
+This module is designed to help the student understand Try/Catch and Exceptions in CPP.
 ## Subject
 ### [ex00](https://github.com/pweinstock/CPP/tree/master/module05/ex00): Mommy, when I grow up, I want to be a bureaucrat!
 Code a 'Bureaucrat' class, with a grade in a specific range. If someone tries to instanciate a Bureaucrat with an invalid grade, throw an exception.\
