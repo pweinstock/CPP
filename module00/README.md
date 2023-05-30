@@ -1,20 +1,13 @@
-# module-00
+# module00
 ## Description
 This first module of C++ is designed to help the student understand the specifities of the language when compared to C.
 ## Subject
 ### [ex00](https://github.com/pweinstock/CPP/tree/master/module00/ex00): Megaphone
-Write a program that behaves as follows:
-```
-$>./megaphone "shhhhh... I think the students are asleep..."
-SHHHHH... I THINK THE STUDENTS ARE ASLEEP...
-$>./megaphone Damnit " ! " "Sorry students, I thought this thing was off."
-DAMNIT ! SORRY STUDENTS, I THOUGHT THIS THING WAS OFF.
-$>./megaphone
-* LOUD AND UNBEARABLE FEEDBACK NOISE *
-$>
-```
+Write a short C++ program, that takes a/multiple string/s from the command line and displays them IN ALL CAPS on the standard out.\
+(first intro to std::cin and std::cout)
 ### [ex01](https://github.com/pweinstock/CPP/tree/master/module00/ex01): My Awesome PhoneBook
-Write a program that behaves like a "crappy awesome phonebook software" from the 80s. On program start-up, the phonebook is empty and the user is prompted to enter one
-of three commands. The program only accepts ADD, SEARCH and EXIT. Once a command has been correctly executed, the program waits for another one. It stops when the user inputs EXIT.
+Write a program that behaves like a "crappy awesome phonebook software" from the 80s. Functionality is limited to ADD a contact, SEARCH for a contact and EXIT the program.\
+(first intro to classes)
 ### [ex02](https://github.com/pweinstock/CPP/tree/master/module00/ex02): The Job Of Your Dreams
-From the content of tests.cpp and Account.hpp, re-engineer how the 'account class' was implemented and code the Account.cpp yourself.
+From the content of tests.cpp and Account.hpp, re-engineer how the 'account class' was implemented and code the Account.cpp yourself.\
+(understand the workings of constructors and destructors of C++ classes)
