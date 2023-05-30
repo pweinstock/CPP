@@ -1,6 +1,6 @@
 # module07
 ## Description
-This module is designed to help you understand Templates in CPP.
+This module is designed to help the student understand Templates in CPP.
 ## Subject
 ### [ex00](https://github.com/pweinstock/CPP/tree/master/module07/ex00): Start with a few functions
 Implement three function templates ('swap', 'min', 'max'), which can be called with any type, as long as the types of both arguments are the same and they support all comparison operators.\
