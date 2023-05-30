@@ -1,6 +1,6 @@
 # module04
 ## Description
-This module is designed to help you understand Subtype polymorphism, abstract classes and interfaces in CPP.
+This module is designed to help the student understand Subtype polymorphism, abstract classes and interfaces in CPP.
 ## Subject
 ### [ex00](https://github.com/pweinstock/CPP/tree/master/module04/ex00): Polymorphism
 Implement an animal class, as well as a Dog and a Cat class, inheriting from the animal class and having their specific sounds. Also implement a a WrongAnimal and a WrongCat class, to check how polymorphism can go wrong.\
