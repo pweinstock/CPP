@@ -1,6 +1,6 @@
 # module06
 ## Description
-This module is designed to help you understand the different casts in CPP.
+This module is designed to help the student understand the different casts in CPP.
 ## Subject
 ### [ex00](https://github.com/pweinstock/CPP/tree/master/module06/ex00): Conversion of scalar types
 Write a program that takes a string representation of a scalar type and convert it to it's actual type, than explicitly to the three other data types. You need to handle char, int, float and double.\
